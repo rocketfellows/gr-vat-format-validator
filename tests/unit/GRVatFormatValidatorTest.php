@@ -30,8 +30,100 @@ class GRVatFormatValidatorTest extends TestCase
     {
         return [
             [
-                'vatNumber',
-                'isValid',
+                'vatNumber' => '123456789',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '000000000',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '111111111',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '999999999',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'EL123456789',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'EL000000000',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'EL111111111',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'EL999999999',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'GR123456789',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'GR000000000',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'GR111111111',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'GR999999999',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '1234567890',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '12345678',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'EL1234567890',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'EL12345678',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'GR1234567890',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'GR12345678',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'DE123456789',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'EL12345678a',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'GR12345678a',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '0',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '1',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '',
+                'isValid' => false,
             ],
         ];
     }
