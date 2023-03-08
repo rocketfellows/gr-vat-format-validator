@@ -1,22 +1,21 @@
 <?php
 
-// TODO: set namespace
-namespace unit;
+namespace rocketfellows\GRVatFormatValidator\tests\unit;
 
-class CountryVatFormatValidatorTest extends TestCase
+use PHPUnit\Framework\TestCase;
+
+class GRVatFormatValidatorTest extends TestCase
 {
     /**
-     * TODO: set type
-     * @var
+     * @var GRVatFormatValidator
      */
     private $validator;
 
-    /**
-     * TODO: setup validator for test
-     */
     protected function setUp(): void
     {
-        $this->validator = new CountryVatFormatValidator();
+        parent::setUp();
+
+        $this->validator = new GRVatFormatValidator();
     }
 
     /**
