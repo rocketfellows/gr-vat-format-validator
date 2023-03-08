@@ -87,6 +87,18 @@ class GRVatFormatValidatorTest extends TestCase
                 'isValid' => false,
             ],
             [
+                'vatNumber' => 'El123456789',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'eL123456789',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'el123456789',
+                'isValid' => false,
+            ],
+            [
                 'vatNumber' => 'EL1234567890',
                 'isValid' => false,
             ],
@@ -100,6 +112,18 @@ class GRVatFormatValidatorTest extends TestCase
             ],
             [
                 'vatNumber' => 'GR12345678',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'Gr123456789',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'gR123456789',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'gr123456789',
                 'isValid' => false,
             ],
             [
