@@ -1,33 +1,8 @@
-# Country vat format validator template description
-
-## Implementation steps
-
-1. Create repository use template for name: <ISO-3166-standard-alpha2-code>-vat-format-validator
-2. Update composer.json **name** attribute: rocketfellows/<ISO-3166-standard-alpha2-code>-vat-format-validator
-3. Update composer.json with autoload and autoload-dev sections by pattern:
-```php
-   "autoload": {
-        "psr-4": {
-            "rocketfellows\\<ISO-3166-standard-alpha2-code>VatFormatValidator\\": "src/"
-        }
-   },
-   "autoload-dev": {
-        "psr-4": {
-            "rocketfellows\\<ISO-3166-standard-alpha2-code>VatFormatValidator\\tests\\": "tests/"
-        }
-   }
-```
-3. Run docker-deploy.sh
-4. Implement unit test in test/unit directory
-5. Implement direct validator
-
-# Templated readme
-
-# <Country> vat format validator
+# Greece vat format validator
 
 ![Code Coverage Badge](./badge.svg)
 
-This component provides <Country> vat number format validator.
+This component provides Greece vat number format validator.
 
 Implementation of interface **rocketfellows\CountryVatFormatValidatorInterface\CountryVatFormatValidatorInterface**
 
@@ -36,17 +11,18 @@ Depends on https://github.com/rocketfellows/country-vat-format-validator-interfa
 ## Installation
 
 ```shell
-composer require rocketfellows/<ISO-3166-standard-alpha2-code>-vat-format-validator
+composer require rocketfellows/gr-vat-format-validator
 ```
 
 ## Usage example
 
-Valid <Country> vat number:
+Valid Greece vat number:
 
 ```php
-$validator = new <Country>VatFormatValidator();
-$validator->isValid('');
-$validator->isValid('');
+$validator = new GRVatFormatValidator();
+$validator->isValid('123456789');
+$validator->isValid('EL123456789');
+$validator->isValid('GR123456789');
 ```
 
 Returns:
@@ -54,17 +30,26 @@ Returns:
 ```shell
 true
 true
+true
 ```
 
-Invalid <Country> vat number:
+Invalid Greece vat number:
 
 ```php
-$validator = new <Country>VatFormatValidator();
-$validator->isValid('');
-$validator->isValid('');
+$validator = new GRVatFormatValidator();
+$validator->isValid('1234567890');
+$validator->isValid('12345678');
+$validator->isValid('EL1234567890');
+$validator->isValid('EL12345678');
+$validator->isValid('GR1234567890');
+$validator->isValid('GR12345678');
 ```
 
 ```shell
+false
+false
+false
+false
 false
 false
 ```
@@ -74,4 +59,3 @@ false
 Welcome to pull requests. If there is a major changes, first please open an issue for discussion.
 
 Please make sure to update tests as appropriate.
-
